@@ -24,8 +24,8 @@ const projectData = [
     title: "Portfolio Website",
     description:
       "A personal portfolio website (like this one!) to showcase my skills and projects, built with modern web technologies like Vite and React.",
-    githubLink: "https://github.com",
-    liveLink: "https://example.com",
+    githubLink: "https://github.com/saanvi05/my-portfolio-app",
+    liveLink: "https://my-portfolio-app-2zz.pages.dev/",
   },
 ];
 
