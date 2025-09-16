@@ -10,6 +10,7 @@ const projectData = [
     description:
       "A fully Designed e-commerce platform designed with Figma, featuring product search, a shopping cart, and a checkout process.",
     liveLink: "https://www.behance.net/gallery/205156849/Car-Dashboard",
+    liveLinkType: "behance",
   },
   {
     image: "/images/project2.jpg",
@@ -42,6 +43,7 @@ function Projects() {
             description={project.description}
             githubLink={project.githubLink}
             liveLink={project.liveLink}
+            liveLinkType={project.liveLinkType}
           />
         ))}
       </div>
