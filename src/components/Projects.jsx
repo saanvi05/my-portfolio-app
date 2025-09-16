@@ -21,7 +21,7 @@ const projectData = [
     liveLink: "https://saanvi-frontend-adventure.pages.dev/",
   },
   {
-    image: "/images/project3.jpg",
+    image: "/images/Project3.png",
     title: "Portfolio Website",
     description:
       "A personal portfolio website (like this one!) to showcase my skills and projects, built with modern web technologies like Vite and React.",
