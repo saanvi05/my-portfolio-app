@@ -1,7 +1,7 @@
 // src/components/Footer.jsx
 import React from "react";
 import "./Footer.css";
-import { FaBehance, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"; // Example social icons
+import { FaBehance, FaGithub, FaLinkedin, FaFigma } from "react-icons/fa"; // Example social icons
 
 function Footer() {
   const currentYear = new Date().getFullYear(); // Automatically gets the current year
@@ -30,6 +30,14 @@ function Footer() {
           rel="noopener noreferrer"
         >
           <FaBehance />
+        </a>
+
+        <a
+          href="https://docs.google.com/document/d/1Vf8_4Aqypcy5WglHJ7Vg83fKyMzi_OcNz3ohHsT6Jw8/edit?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaFigma />
         </a>
       </div>
       <p className="copyright-text">
