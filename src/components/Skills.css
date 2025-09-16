@@ -40,6 +40,16 @@
   color: var(--text-primary);
 }
 
-/* (Keep all @media rules from before) */
-@media (max-width: 768px) { .skills-grid { grid-template-columns: repeat(2, 1fr); max-width: 500px; } }
-@media (max-width: 480px) { .skills-grid { grid-template-columns: 1fr; max-width: 250px; } }
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* This is correct */
+    max-width: 250px; /* This makes the single column narrower and more centered */
+  }
+}

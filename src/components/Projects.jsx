@@ -33,19 +33,21 @@ const projectData = [
 function Projects() {
   return (
     <section id="projects" className="projects-section">
-      <h2 className="section-title">My Projects</h2>
-      <div className="projects-grid">
-        {projectData.map((project, index) => (
-          <ProjectCard
-            key={index}
-            image={project.image}
-            title={project.title}
-            description={project.description}
-            githubLink={project.githubLink}
-            liveLink={project.liveLink}
-            liveLinkType={project.liveLinkType}
-          />
-        ))}
+      <div className="section-content-container">
+        <h2 className="section-title">My Projects</h2>
+        <div className="projects-grid">
+          {projectData.map((project, index) => (
+            <ProjectCard
+              key={index}
+              image={project.image}
+              title={project.title}
+              description={project.description}
+              githubLink={project.githubLink}
+              liveLink={project.liveLink}
+              liveLinkType={project.liveLinkType}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

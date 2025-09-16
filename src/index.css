@@ -1,6 +1,6 @@
 /* src/index.css */
 
-/* 1. Define color variables for Light Mode */
+/* 1. Your color variables are preserved */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -10,7 +10,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
   --background-primary: #f8f9fa;
   --background-secondary: #ffffff;
   --card-background: #ffffff;
@@ -23,7 +23,7 @@
   --accent-hover: #0056b3;
 }
 
-/* 2. THE CRITICAL FIX IS HERE: Use "body.theme-dark" */
+/* 2. Your dark theme variables are preserved */
 body.theme-dark {
   --background-primary: #242424;
   --background-secondary: #1a1a1a;
@@ -37,7 +37,6 @@ body.theme-dark {
   --accent-hover: #0056b3;
 }
 
-/* 3. Basic body and root styling using variables */
 body {
   margin: 0;
   background-color: var(--background-primary);
@@ -45,14 +44,20 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* 3. THE FIX: #root is no longer centered */
 #root {
-  max-width: 1400px;
-  margin: 0 auto;
   padding: 0;
   text-align: center;
 }
 
-/* --- Animation Styles --- */
+/* 4. THE FIX: Our new class now handles the centering and max-width */
+.main-content-container {
+  max-width: 1400px;
+  margin: 0 auto; /* This centers the container */
+  padding: 0 2rem; /* Adds space on the sides so content isn't flush with the edge */
+}
+
+/* --- Animation Styles are preserved --- */
 .animated-section {
   transition: opacity 0.8s ease-out, transform 0.6s ease-out;
 }

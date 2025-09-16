@@ -11,3 +11,11 @@
   max-width: 1200px;
   margin: 3rem auto 0;
 }
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 3rem 1rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}

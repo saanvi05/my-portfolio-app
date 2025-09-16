@@ -1,58 +1,84 @@
 /* src/components/Hero.css */
+
+/* --- Main Section Styles --- */
 .hero-section {
   padding: 6rem 2rem;
+  background-color: var(--background-primary);
   display: flex;
-  justify-content: center;
+  align-items: center; /* ✅ UNCOMMENTED - This centers content vertically */
+  justify-content: center; /* ✅ ADDED - This centers content horizontally */
+  min-height: 80vh;
+}
+
+/* THIS IS THE KEY FIX: We apply the flexbox layout here */
+.hero-inner {
+  display: flex;
+  justify-content: space-between; /* Pushes text to the left and image to the right */
   align-items: center;
-  text-align: center;
-  background-color: var(--background-primary); /* CHANGE */
-  color: var(--text-primary); /* CHANGE */
+  gap: 48px;
+  width: 100%; /* ✅ ADDED - Ensures full width usage */
+  max-width: 1200px; /* ✅ ADDED - Limits maximum width for better layout */
 }
+
+/* --- Content & Image Styles --- */
 .hero-content {
-  max-width: 800px;
-}
-.hero-greeting {
-  font-size: 1.2rem;
-  color: var(--text-secondary); /* CHANGE */
-  margin-bottom: 0.5rem;
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.2s;
-}
-.hero-name {
-  font-size: 4.5rem;
-  margin: 0.5rem 0;
-  color: var(--accent-color); /* CHANGE */
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.4s;
-}
-.hero-title {
-  font-size: 2.5rem;
-  margin-top: 0.5rem;
-  color: var(--text-primary); /* CHANGE */
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.6s;
-}
-.hero-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
   max-width: 600px;
-  margin: 1.5rem auto;
-  color: var(--text-secondary); /* CHANGE */
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 0.8s;
+  text-align: left;
 }
-.hero-buttons {
-  margin-top: 2.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  animation: fadeIn 0.8s ease-out forwards;
-  animation-delay: 1s;
+
+.hero-image {
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
 }
 
 .hero-image img {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  object-fit: cover;
+  border: 7px solid var(--accent-color);
+  box-shadow: 0 0 20px var(--shadow-color-hover);
+}
+
+/* --- Text & Button Styles --- */
+.hero-greeting {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  animation: fadeIn 0.8s ease-out forwards 0.2s;
+}
+
+.hero-name {
+  font-size: 4.5rem;
+  margin: 0.5rem 0;
+  color: var(--accent-color);
+  animation: fadeIn 0.8s ease-out forwards 0.4s;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  color: var(--text-primary);
+  animation: fadeIn 0.8s ease-out forwards 0.6s;
+}
+
+.hero-description {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  color: var(--text-secondary);
+  animation: fadeIn 0.8s ease-out forwards 0.8s;
+}
+
+.hero-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-start; /* Aligns buttons to the left */
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  animation: fadeIn 0.8s ease-out forwards 1s;
 }
 
 .btn {
@@ -64,59 +90,86 @@
   transition: all 0.3s ease;
   cursor: pointer;
 }
+
 .primary-btn {
   background-color: var(--accent-color);
   color: white;
   border: 2px solid var(--accent-color);
 }
+
 .primary-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
   transform: translateY(-3px);
 }
+
 .secondary-btn {
   background-color: transparent;
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
+
 .secondary-btn:hover {
   background-color: var(--accent-color);
   color: white;
   transform: translateY(-3px);
 }
 
-/* (Keep all @media rules and @keyframes from before) */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 5rem 1.5rem;
+/* --- RESPONSIVE STYLES --- */
+
+/* For Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .hero-inner {
+    flex-direction: column; /* Stacks the content vertically */
+    justify-content: center;
+    gap: 3rem;
   }
-  .hero-name {
-    font-size: 3.5rem;
+
+  .hero-content {
+    text-align: center;
   }
-  .hero-title {
-    font-size: 2rem;
+
+  .hero-buttons {
+    justify-content: center; /* Re-centers buttons when stacked */
+  }
+
+  .hero-image {
+    width: 300px;
+    height: 300px;
   }
 }
+
+/* For Mobile Phones */
 @media (max-width: 480px) {
   .hero-section {
     padding: 4rem 1rem;
+    min-height: auto;
   }
+
   .hero-name {
     font-size: 2.8rem;
   }
+
   .hero-title {
     font-size: 1.6rem;
   }
-  .hero-description {
-    font-size: 1rem;
+
+  .hero-image {
+    width: 250px;
+    height: 250px;
   }
+
   .hero-buttons {
     flex-direction: column;
     align-items: center;
   }
+
   .btn {
     width: 80%;
   }
 }
+
+/* --- Animation --- */
 @keyframes fadeIn {
   from {
     opacity: 0;

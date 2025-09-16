@@ -1,8 +1,8 @@
 /* src/components/Navbar.css */
 .navbar {
+  /* This makes the background full-width and centers the content div */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
   padding: 1rem 2rem;
   background-color: var(--background-secondary);
   position: sticky;
@@ -12,6 +12,7 @@
   border-bottom: 1px solid var(--border-color);
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
 .navbar-logo a {
   font-size: 1.8rem;
   font-weight: bold;
@@ -19,10 +20,46 @@
   text-decoration: none;
   transition: color 0.3s ease;
 }
-.navbar-links { list-style: none; margin: 0; padding: 0; display: flex; gap: 2rem; }
-.navbar-links li a { color: var(--text-primary); text-decoration: none; font-size: 1.1rem; transition: color 0.3s ease; }
-.navbar-links li a:hover { color: var(--accent-color); }
 
-/* (Keep all @media rules from before) */
-@media (max-width: 768px) { .navbar { flex-direction: column; padding: 1rem; } .navbar-links { margin-top: 1rem; gap: 1.5rem; } }
-@media (max-width: 480px) { .navbar-logo a { font-size: 1.5rem; } .navbar-links { gap: 1.2rem; } .navbar-links li a { font-size: 1rem; } }
+.navbar-content {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+.navbar-links li a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.navbar-links li a:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .navbar-content {
+    flex-direction: column; /* Stack logo and links vertically */
+    gap: 1rem; /* Add some space between the stacked logo and links */
+  }
+
+  .navbar-logo a {
+    font-size: 1.6rem; /* Make the logo text a bit smaller */
+  }
+
+  .navbar-links {
+    gap: 1.5rem; /* Reduce the gap between the links */
+  }
+
+  .navbar-links li a {
+    font-size: 1rem; /* Make the link text a bit smaller */
+  }
+}
