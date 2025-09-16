@@ -1,0 +1,34 @@
+/* src/components/About.css */
+.about-section {
+  padding: 5rem 2rem;
+  background-color: var(--background-secondary);
+  text-align: center;
+}
+.section-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--accent-color);
+}
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.about-text {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 600px;
+  color: var(--text-secondary);
+}
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+/* (Keep all @media rules from before) */
+@media (max-width: 768px) { .about-content { flex-direction: column; text-align: center; } .about-text { max-width: 90%; text-align: center; } }
+@media (max-width: 480px) { .about-section { padding: 3rem 1rem; } .section-title { font-size: 2.5rem; } .about-text { font-size: 1rem; } }

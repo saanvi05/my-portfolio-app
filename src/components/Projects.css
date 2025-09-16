@@ -1,0 +1,13 @@
+/* src/components/Projects.css */
+.projects-section {
+  padding: 5rem 2rem;
+  background-color: var(--background-secondary);
+  text-align: center;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
