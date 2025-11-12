@@ -43,6 +43,19 @@ function Contact() {
               required
             ></textarea>
           </div>
+          <div className="form-group">
+            <p className="attachment-instruction">
+              If you have a file to share (e.g., a job description), please
+              upload it to Google Drive/Dropbox and paste the shareable link
+              below.
+            </p>
+            <input
+              type="text"
+              id="attachment_link"
+              name="attachment_link"
+              placeholder="Paste file link here (optional)"
+            />
+          </div>
           <button type="submit" className="btn primary-btn">
             Send Message
           </button>
