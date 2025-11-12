@@ -22,7 +22,14 @@
   --shadow-color-hover: rgba(0, 0, 0, 0.2);
   --accent-hover: #0056b3;
 }
-
+html {
+  scroll-behavior: smooth;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  /* The old shadow is now your new glow effect */
+  box-shadow: 0 8px 25px var(--shadow-color-hover);
+}
 /* 2. Your dark theme variables are preserved */
 body.theme-dark {
   --background-primary: #242424;
